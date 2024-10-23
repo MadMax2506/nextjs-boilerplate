@@ -1,0 +1,40 @@
+name: CI & CD
+
+# Run if something is commited on `main` or there is still an open pulll request with `main` as target branch
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - ".husky/**"
+      - ".scripts/**"
+      - ".vscode/**"
+      - ".public/**"
+      - ".gitignore"
+      - "LICENSE"
+      - "commitlint.config.ts"
+      - "README.md"
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ".husky/**"
+      - ".scripts/**"
+      - ".vscode/**"
+      - ".public/**"
+      - ".gitignore"
+      - "LICENSE"
+      - "commitlint.config.ts"
+      - "README.md"
+
+jobs:
+  ci:
+    uses: ./.github/workflows/CI.yml
+
+  deploy:
+    needs: [ci]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying finished"
