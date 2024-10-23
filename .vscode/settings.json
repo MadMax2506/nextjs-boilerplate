@@ -1,17 +1,31 @@
 {
   "workbench.editor.customLabels.enabled": true,
   "workbench.editor.customLabels.patterns": {
-    "**/app/**/layout.tsx": "${dirname(1)}/${dirname} - Layout",
-    "**/app/**/page.tsx": "${dirname(1)}/${dirname} - Page",
-    "**/app/**/route.ts": "${dirname(1)}/${dirname} - Route",
-    "**/app/**/_components/**/*.tsx": "${filename} - ${dirname(2)}/${dirname(1)} - Component",
-    "**/components/**/*.tsx": "${filename} - Component",
-    "**/data-layer/**/*.ts": "${filename} - Data Layer",
-    "**/entities/**/*.ts": "${filename} - Entity",
-    "**/hooks/**/*.ts": "${filename} - Hook",
-    "**/lib/**/*.ts": "${filename} - Library",
-    "**/utils/**/*.ts": "${filename} - Utility",
-    "**/env/**/*.ts": "${filename} - Environment"
+    "**/*.types.ts": "${filename} - Type",
+    "**/*.utils.ts": "${filename} - Utility",
+    "**/*.process.ts": "${filename} - Process",
+
+    "**/package.json": "Package",
+    "**/tsconfig.json": "TypeScript Config",
+    "**/tailwind.config.ts": "Tailwind Config",
+    "**/next.config.js": "Next Config",
+    "**/.env": "Environment Variables",
+    "**/.scripts/**.sh": "${filename} - Scripts",
+
+    "**/prisma/schema.prisma": "Prisma Schema",
+    "**/prisma/seed.ts": "Prisma Seeds",
+    "**/prisma/**/migrations/*": "${filename} - Prisma Migration",
+
+    "**/src/env.js": "Env Configuration",
+    "**/src/styles/**": "${filename} - Style",
+
+    "**/src/server/*.*": "${filename} - Server",
+
+    "**/src/app/api/**": "${filename} - API",
+    "**/src/app/**/layout.tsx": "${dirname(1)}/${dirname} - Layout",
+    "**/src/app/**/page.tsx": "${dirname(1)}/${dirname} - Page",
+    "**/src/app/**/route.ts": "${dirname(1)}/${dirname} - Route",
+    "**/src/app/**/_components/**/*.tsx": "${filename} - Component"
   },
   "conventionalCommits.scopes": ["app", "web", "api", "package", "config"],
   "editor.defaultFormatter": "biomejs.biome",
