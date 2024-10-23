@@ -9,12 +9,6 @@
     },
     {
       "type": "shell",
-      "label": "Worker",
-      "command": "pnpm worker",
-      "group": "build"
-    },
-    {
-      "type": "shell",
       "label": "Lint",
       "command": "pnpm lint",
       "group": "build"
