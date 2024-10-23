@@ -1,16 +1,20 @@
 {
   "workbench.editor.customLabels.enabled": true,
   "workbench.editor.customLabels.patterns": {
+    "**/.github/dependabot.yml": "Dependabot",
+    "**/.github/workflows/*.yml": "${filename} - GitHub Workflow",
+    "**/.scripts/**.sh": "${filename} - Scripts",
+    "**/.vscode/settings.json": "Settings",
+    "**/.vscode/tasks.json": "Task",
+
     "**/*.types.ts": "${filename} - Type",
     "**/*.utils.ts": "${filename} - Utility",
     "**/*.process.ts": "${filename} - Process",
-
     "**/package.json": "Package",
     "**/tsconfig.json": "TypeScript Config",
     "**/tailwind.config.ts": "Tailwind Config",
     "**/next.config.js": "Next Config",
     "**/.env": "Environment Variables",
-    "**/.scripts/**.sh": "${filename} - Scripts",
 
     "**/prisma/schema.prisma": "Prisma Schema",
     "**/prisma/seed.ts": "Prisma Seeds",
