@@ -1,7 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": false, "ignore": ["**/build", "**/coverage", "**/node_modules", "**/.next"] },
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": ["**/build", "**/coverage", "**/node_modules", "**/.next", ".pnpm-store"]
+  },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
