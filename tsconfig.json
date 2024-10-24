@@ -26,6 +26,8 @@
       "@api/*": ["./src/app/api/*"],
 
       "@ui/*": ["./src/components/ui/*"],
+      "@provider/*": ["./src/components/provider/*"],
+      "@components/*": ["./src/components/*"],
 
       "@hooks/*": ["./src/hooks/*"],
 

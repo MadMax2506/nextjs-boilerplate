@@ -1,15 +1,15 @@
-import { routing } from "@i18n"
+import { Locale, routing } from "@i18n"
+import { FullPageLayout } from "@provider/Layout"
+import { LocaleProviderSC } from "@provider/LocaleProviderSC"
+import { ThemeProviderSC } from "@provider/ThemeProviderSC"
 import "@styles/globals.css"
-
 import { GeistSans } from "geist/font/sans"
-import { NextIntlClientProvider } from "next-intl"
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server"
-import { notFound } from "next/navigation"
 
-type ParamProps = { locale: "de" | "en" }
-type RootLayoutProps = { children: React.ReactNode } & { params: ParamProps }
+import { getTranslations, setRequestLocale } from "next-intl/server"
 
-export async function generateMetadata({ params }: { params: ParamProps }) {
+type GenerateMetadataProps = { params: { locale: Locale } }
+
+export async function generateMetadata({ params }: GenerateMetadataProps) {
   const { locale } = await params // asynchronous access of `params`
 
   const t = await getTranslations({ locale })
@@ -25,15 +25,10 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
+type RootLayoutProps = { children: React.ReactNode; params: { locale: Locale } }
+
 export default async function RootLayout({ children, params }: Readonly<RootLayoutProps>) {
   const { locale } = await params // asynchronous access of `params`
-
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale)) notFound()
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages()
 
   // Enable static rendering
   setRequestLocale(locale)
@@ -41,7 +36,11 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
   return (
     <html lang={locale} className={`${GeistSans.variable}`}>
       <body>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <LocaleProviderSC locale={locale}>
+          <ThemeProviderSC attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <FullPageLayout>{children}</FullPageLayout>
+          </ThemeProviderSC>
+        </LocaleProviderSC>
       </body>
     </html>
   )

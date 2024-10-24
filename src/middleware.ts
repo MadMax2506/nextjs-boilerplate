@@ -24,5 +24,5 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(de|en)/:path*", "/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/", "/(de|en)/:path*", "/((?!_next/static|_next/image|favicon.ico|logo.png).*)"],
 }

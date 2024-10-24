@@ -1,4 +1,20 @@
 {
   "title": "Next.js Boilerplate",
-  "description": "This is a simple example of a Next.js project."
+  "description": "This is a simple example of a Next.js project.",
+  "navbar": {
+    "toWebsite": "To Website",
+    "toggleTheme": "Toggle Theme",
+    "locale": {
+      "de": "German",
+      "en": "English"
+    },
+    "hamburgerMenu": {
+      "title": "Menu",
+      "description": "Choose a page"
+    },
+    "pages": {
+      "home": "Home",
+      "admin": "Admin"
+    }
+  }
 }
