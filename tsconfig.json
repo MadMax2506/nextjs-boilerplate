@@ -23,6 +23,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/app/_components/*", "./src/app/[locale]/_components/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@i18n": ["./src/i18n"],
       "@/*": ["./src/*"]
     }
   },

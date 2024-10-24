@@ -18,6 +18,7 @@
 
 1. Copy `.env.example` to `.env` and fill in the required environment variables.
 1. Set the application name in [`package.json`](./package.json).
+1. Set the application title & description in [`messages`](./messages).
 1. Run `pnpm install` to install the dependencies.
 1. Run `pnpm db:create` or vs-code task `Create Database` to create the database.
 1. Run `pnpm db:seed` to seed the database.
